@@ -27,7 +27,7 @@ app.get('/api/whoami', (req, res) => {
   const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
   const language = req.get('accept-language');
   const software = req.get('user-agent');
-  res.json({ ipaddress: ip || 'none', language: language, software: software });
+  res.json({ ipaddress: ip, language: language, software: software });
 });
 // listen for requests :)
 var listener = app.listen(process.env.PORT || 5000, function () {
